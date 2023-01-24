@@ -6,32 +6,32 @@ import pymysql
 
 
 # Create a connection object
-dbServerName    = "localhost"
-port            = 3306
-dbUser          = "root"
-dbPassword      = ""
-dbName          = "face_db"
+#dbServerName    = "localhost"
+#port            = 3306
+#dbUser          = "root"
+#dbPassword      = ""
+#dbName          = "face_db"
 
-conn = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,db=dbName, port=port)
+#conn = pymysql.connect(host=dbServerName, user=dbUser, password=dbPassword,db=dbName, port=port)
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 
-def face_store_db(faceid):
-    try:
-        print("Connection Establised")
-
-        # Create a cursor object
-        cursor = conn.cursor()
-
-        # Create a new record
-        sql = "INSERT INTO `faces` (`face-id`) VALUES (%s)"
-        cursor.execute(sql, (faceid))
-        conn.commit()
-
-    except Exception as e:
-        print("Exeception occured:{}".format(e))
+#def face_store_db(faceid):
+#    try:
+#        print("Connection Establised")
+#
+#        # Create a cursor object
+#        cursor = conn.cursor()
+#
+#        # Create a new record
+#        sql = "INSERT INTO `faces` (`face-id`) VALUES (%s)"
+#        cursor.execute(sql, (faceid))
+#        conn.commit()
+#
+#    except Exception as e:
+#        print("Exeception occured:{}".format(e))
 
         
 
@@ -50,7 +50,7 @@ def detect(frame):
 
         try:
             cv2.imwrite('./faces/'+ str(faceid), cropped_face)
-            face_store_db(faceid)
+#            face_store_db(faceid)
             
         except Exception as e:
             print("Exeception occured:{}".format(e))

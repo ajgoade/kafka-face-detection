@@ -8,13 +8,15 @@ import facedetector
 
 app = Flask(__name__)
 
-consumer = KafkaConsumer('altersense', bootstrap_servers='localhost:9092')
+consumer = KafkaConsumer('kfd-altersense', bootstrap_servers='localhost:9092')
 
 
 def stream_video():
+    print('starting stream')
     for message in consumer:
         # Decoding part
         # data = base64.b64decode(message.value)
+        print('Accessing Image')
         data = np.frombuffer(message.value, dtype=np.uint8)
         frame = cv2.imdecode(data, flags=1)
 

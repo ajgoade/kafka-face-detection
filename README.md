@@ -1,17 +1,16 @@
 # Realtime face detection using Kafka video streaming 
-- Face detection using Kafka | OpenCV | Centerface | Flask | MySQL
-- Running kafka using docker
-- Stored face images
+- Face detection using Kafka | OpenCV | Centerface | Flask
+- Running HPF DF Streams (DFaaS)
 
 ## Installation
-- Install docker, docker-compose
 - Install the dependencies:
 ```python
   $ pip install -r requirements.txt
 ```
-## Kafka & Zookeeper Setup
+## HPE DF Streams DFaaS setup
+- Create the Topic used in the consumer and producer.  Currently kfd-altersense
 ```
-  $ docker-compose -f docker-compose.yml up -d
+  $ sudo ssh -i <ssh pem file> <DFaaS Endpoint> -L 9092:localhost:9092 -N -f
 ```
 ## Finally
 
