@@ -8,7 +8,7 @@
   $ pip install -r requirements.txt
 ```
 ## HPE DF Streams DFaaS setup
-- Create the Topic used in the consumer and producer.  Currently kfd-altersense
+- Create the Topic used in the consumer and producer.  Currently *kfd-altersense*
 ```
   $ sudo ssh -i <ssh pem file> <DFaaS Endpoint> -L 9092:localhost:9092 -N -f
 ```
