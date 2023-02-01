@@ -34,4 +34,4 @@ def send_video(path_to_video):
         print('.', end='', flush=True)
 
 
-send_video("/app/home_base.mp4")
+send_video("./home_base.mp4")
