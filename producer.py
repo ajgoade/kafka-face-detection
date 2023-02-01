@@ -34,5 +34,4 @@ def send_video(path_to_video):
         print('.', end='', flush=True)
 
 
-send_video("/Users/ajgoade/Documents/dev/DFaaS/topic/kafka-face-detection/home_base.mp4")
-#send_video("/Users/ajgoade/Documents/dev/DFaaS/topic/kafka-face-detection/video.mp4")
+send_video("/app/home_base.mp4")
